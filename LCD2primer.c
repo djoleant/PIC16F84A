@@ -77,7 +77,8 @@ void interrupt intcode()
         else if(PORTAbits.RA0 == 1) CIFRA = 1;
         else CIFRA = 0;
         
-        unos[brUnosa-1] = CIFRA; // indeks u nizu jer br unosa npr treci unos ide na niz[2]
+        unos[brUnosa-1] = CIFRA; // indeks u nizu jer br unosa npr
+        //treci unos ide na niz[2]
         
         Lcd_Init();
         Lcd_Set_Cursor(1, brUnosa);

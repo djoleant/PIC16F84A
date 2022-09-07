@@ -9,7 +9,7 @@ __CONFIG(FOSC_HS & WDTE_OFF & PWRTE_ON & CP_OFF);
  100Hz znaci TMR0 izbroji do 100 za 1s
  znaci do 150 za 1,5s
  Da bi generisao interrupt mora da predje 255
- Zato setujemo TMR0 inicijalno na 255-105=105
+ Zato setujemo TMR0 inicijalno na 255-150=105
  */
 
 
@@ -38,6 +38,7 @@ void interrupt intcode(void)
 {
     if(INTCONbits.T0IF == 1)
     {
+        //BROJAC MORA koji broji
         if(PORTBbits.RB0 == 1)
         {
             PORTB = 128;
